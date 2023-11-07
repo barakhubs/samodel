@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('votes', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('post_id')->constrained()->cascadeOnDelete();
+            $table->string('votes')->default('0');
+            $table->string('session_id');
             $table->timestamps();
         });
     }
