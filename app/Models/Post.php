@@ -40,6 +40,4 @@ class Post extends Model
     {
         return $this->hasMany(Vote::class,"post_id");
     }
-
-
 }

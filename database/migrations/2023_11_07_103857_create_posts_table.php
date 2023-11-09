@@ -18,7 +18,7 @@ return new class extends Migration
             $table->text('description');
             $table->string('featured_image');
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
-            $table->enum('status', [1,0])->default(1);
+            $table->enum('status', ['1','0'])->default('1');
             $table->timestamps();
         });
     }
