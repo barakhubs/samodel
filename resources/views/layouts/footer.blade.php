@@ -24,14 +24,8 @@
                         <li><a href="#">Password Generator</a></li>
                         <li><a href="#">Site Checker</a></li>
                         <li><a href="#">File Scanner</a></li>
-                    </ul>
-                    <ul class="list-unstyled float-start links">
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Business</a></li>
-                        <li><a href="#">Careers</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Creative</a></li>
                     </ul>
                 </div> <!-- /.widget -->
             </div> <!-- /.col-lg-4 -->
@@ -84,9 +78,10 @@
             </div> <!-- /.col-lg-4 -->
         </div> <!-- /.row -->
 
-        <div class="row mt-5">
+        <div class="row mt-2">
             <div class="col-12 text-center">
-
+                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed by <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+                </p>
             </div>
         </div>
     </div> <!-- /.container -->

@@ -14,12 +14,12 @@
                         </form>
 
                         <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{{ url('/') }}">Home</a></li>
                             <li class="has-children">
                                 <a href="category.html">Tools</a>
                                 <ul class="dropdown">
-                                    <li><a href="#">Password Generator</a></li>
-                                    <li><a href="#">Password Strength Checker</a></li>
+                                    <li><a href="{{ route('password-generator') }}">Password Generator</a></li>
+                                    <li><a href="{{ route('password-checker') }}">Password Strength Checker</a></li>
                                     <li><a href="#">Virus Scanner</a></li>
                                     <li><a href="#">Site Scanner</a></li>
                                 </ul>

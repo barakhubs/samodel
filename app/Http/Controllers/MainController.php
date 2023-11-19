@@ -10,4 +10,14 @@ class MainController extends Controller
     {
         return view('blog.home');
     }
+
+    public function passwordChecker ()
+    {
+        return view('tools.password-checker');
+    }
+
+    public function passwordGenerator ()
+    {
+        return view('tools.password-generator');
+    }
 }

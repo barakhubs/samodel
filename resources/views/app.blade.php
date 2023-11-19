@@ -29,6 +29,7 @@
 
 
     <title>Samodel &mdash; Security Awareness Model</title>
+    @livewireStyles
 </head>
 
 <body>
@@ -62,15 +63,12 @@
     <script src="{{ asset('front/js/tiny-slider.js') }}"></script>
 
     <script src="{{ asset('front/js/flatpickr.min.js') }}"></script>
-
-
     <script src="{{ asset('front/js/aos.js') }}"></script>
     <script src="{{ asset('front/js/glightbox.min.js') }}"></script>
     <script src="{{ asset('front/js/navbar.js') }}"></script>
     <script src="{{ asset('front/js/counter.js') }}"></script>
     <script src="{{ asset('front/js/custom.js') }}"></script>
-
-
+    @livewireScripts
 </body>
 
 </html>
