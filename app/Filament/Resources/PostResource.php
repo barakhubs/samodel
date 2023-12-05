@@ -128,7 +128,7 @@ class PostResource extends Resource
                     ->toggleable(),
 
                 Tables\Columns\BadgeColumn::make('status')
-                    ->getStateUsing(fn (Post $record): string => $record->published_at?->isPast() ? 'Published' : 'Draft')
+                    ->getStateUsing(fn (Post $record): string => $record->created_at?->isPast() ? 'Published' : 'Draft')
                     ->colors([
                         '1' => 'Published',
                     ]),
@@ -150,7 +150,7 @@ class PostResource extends Resource
                 Tables\Actions\DeleteBulkAction::make()
                     ->action(function () {
                         Notification::make()
-                            ->title('Now, now, don\'t be cheeky, leave some records for others to play with!')
+                            ->title('You are deleting this post?')
                             ->warning()
                             ->send();
                     }),

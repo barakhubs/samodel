@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('front/fonts/flaticon/font/flaticon.css') }}">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css') }}">
+    <!-- Font Awesome CSS Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('front/css/tiny-slider.css') }}">
     <link rel="stylesheet" href="{{ asset('front/css/aos.css') }}">
@@ -28,7 +30,7 @@
     <link rel="stylesheet" href="{{ asset('front/css/flatpickr.min.css') }}">
 
 
-    <title>Samodel &mdash; Security Awareness Model</title>
+    <title>@yield('title')</title>
     @livewireStyles
 </head>
 
