@@ -34,42 +34,21 @@
                     <h3 class="mb-4">Recent Post Entry</h3>
                     <div class="post-entry-footer">
                         <ul>
+                            @foreach (App\Models\Post::orderBy('created_at', 'desc')->paginate(3) as $item)
                             <li>
-                                <a href="">
-                                    <img src="{{ asset('front/images/img_1_sq.jpg') }}" alt="Image placeholder"
+                                <a href="{{ route('single', $item->slug) }}">
+                                    <img src="{{ asset('storage/'.$item->featured_image) }}" alt="Image placeholder"
                                         class="me-4 rounded">
                                     <div class="text">
-                                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
+                                        <h4>{{ $item->title }}</h4>
                                         <div class="post-meta">
-                                            <span class="mr-2">March 15, 2018 </span>
+                                            <span class="mr-2">{{ date('M d Y', strtotime($item->created_at)) }} </span>
                                         </div>
                                     </div>
                                 </a>
                             </li>
-                            <li>
-                                <a href="">
-                                    <img src="{{ asset('front/images/img_2_sq.jpg') }}" alt="Image placeholder"
-                                        class="me-4 rounded">
-                                    <div class="text">
-                                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                                        <div class="post-meta">
-                                            <span class="mr-2">March 15, 2018 </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="{{ asset('front/images/img_3_sq.jpg') }}" alt="Image placeholder"
-                                        class="me-4 rounded">
-                                    <div class="text">
-                                        <h4>There’s a Cool New Way for Men to Wear Socks and Sandals</h4>
-                                        <div class="post-meta">
-                                            <span class="mr-2">March 15, 2018 </span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </li>
+
+                            @endforeach
                         </ul>
                     </div>
 
@@ -80,7 +59,7 @@
 
         <div class="row mt-2">
             <div class="col-12 text-center">
-                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash; Designed with love by <a href="https://untree.co">Untree.co</a>  Distributed by <a href="https://themewagon.com">ThemeWagon</a> <!-- License information: https://untree.co/license/ -->
+                <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. </p>
                 </p>
             </div>
         </div>
