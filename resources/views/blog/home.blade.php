@@ -11,7 +11,7 @@
                     @foreach ($random_posts as $item)
                     <a href="{{ route('single', $item->slug) }}" class="h-entry mb-30 v-height gradient">
 
-                        <div class="featured-img" style="background-image: url('storage/{{ $item->featured_image }}');"></div>
+                        <div class="featured-img" style="background-image: url('public/storage/{{ $item->featured_image }}');"></div>
 
                         <div class="text">
                             <span class="date">{{ date('M d Y', strtotime($item->created_at)) }}</span>
@@ -24,7 +24,7 @@
                 <div class="col-md-4">
                     <a href="{{ route('single', $item->slug) }}" class="h-entry img-5 h-100 gradient">
 
-                        <div class="featured-img" style="background-image: url('storage/{{ $item->featured_image }}');"></div>
+                        <div class="featured-img" style="background-image: url('public/storage/{{ $item->featured_image }}');"></div>
 
                         <div class="text">
                             <span class="date">{{ date('M d Y', strtotime($item->created_at)) }}</span>
@@ -37,7 +37,7 @@
                     @foreach ($oldest_posts as $item)
                     <a href="{{ route('single', $item->slug) }}" class="h-entry mb-30 v-height gradient">
 
-                        <div class="featured-img" style="background-image: url('storage/{{ $item->featured_image }}');"></div>
+                        <div class="featured-img" style="background-image: url('public/storage/{{ $item->featured_image }}');"></div>
 
                         <div class="text">
                             <span class="date">{{ date('M d Y', strtotime($item->created_at)) }}</span>
