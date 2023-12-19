@@ -21,7 +21,7 @@
                                     <li><a href="{{ route('password-generator') }}">Password Generator</a></li>
                                     <li><a href="{{ route('password-checker') }}">Password Strength Checker</a></li>
                                     <li><a href="{{ route('file-scanner') }}">Virus Scanner</a></li>
-                                    <li><a href="#">Site Scanner</a></li>
+                                    <li><a href="{{ route('url-scanner') }}">Site Scanner</a></li>
                                 </ul>
                             </li>
                             <li><a href="category.html">About</a></li>

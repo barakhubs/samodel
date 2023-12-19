@@ -21,10 +21,15 @@ class FileScanner extends Component
 
     public $api_key = '392eadfdd2883917353bc604cbe24fb46d1742c931cce6d4d95b7521ff00df66';
 
+    public function mount()
+    {
+        $this->file_to_scan = null;
+    }
+
     public function scan()
     {
         $this->validate([
-            'file_to_scan' => 'required|max:2048|mimes:png,jpg,docx,doc,zip,exe,msi,ppt,xlxs', // 2MB Max
+            'file_to_scan' => 'required|max:4096|mimes:png,jpg,docx,doc,zip,exe,msi,ppt,xlxs,pdf', // 2MB Max
         ]);
 
         if ($this->file_to_scan) {
@@ -60,11 +65,17 @@ class FileScanner extends Component
 
                     // $this->scan_date = strtotime($report['scan_date']);
 
-                    $this->positive_scans = $report['positives'];
-                    $this->total_scans = $report['total'];
-                    $this->tool_list = $report['scans'];
+                    if (isset($report['positives'])) {
+                        $this->positive_scans = $report['positives'];
+                        $this->total_scans = $report['total'];
+                        $this->tool_list = $report['scans'];
 
-                    $this->scanned = true;
+                        $this->scanned = true;
+                        $this->scan_date = $report['scan_date'];
+                        $this->reset(['file_to_scan']);
+                    } else {
+                        $this->fail_message = 'No scan results available.';
+                    }
 
 
                 } else {
