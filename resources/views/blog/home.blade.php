@@ -1,6 +1,6 @@
 @extends('app')
 
-@section('title', 'Samodel &mdash; Security Awareness Model')
+@section('title', 'Samodel - Security Awareness Model')
 
 @section('content')
     <!-- Start retroy layout blog posts -->

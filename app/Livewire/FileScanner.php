@@ -21,11 +21,6 @@ class FileScanner extends Component
 
     public $api_key = '392eadfdd2883917353bc604cbe24fb46d1742c931cce6d4d95b7521ff00df66';
 
-    public function mount()
-    {
-        $this->file_to_scan = null;
-    }
-
     public function scan()
     {
         $this->validate([
