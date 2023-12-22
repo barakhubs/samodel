@@ -14,7 +14,7 @@
         <form wire:submit.prevent="scan" class="row">
             <div class="mb-3 col-md-9">
                 <div class="input-group">
-                    <input type="file" class="form-control" wire:model="file_to_scan">
+                    <input required type="file" class="form-control" wire:model="file_to_scan">
 
                 </div>
                 @error('file_to_scan')

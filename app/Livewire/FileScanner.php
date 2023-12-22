@@ -10,6 +10,7 @@ class FileScanner extends Component
 {
     use WithFileUploads;
     public bool $scanned = false;
+    public $isDisabled = false;
     public $file_to_scan;
     public $resource_id;
     public $scan_date;
@@ -24,7 +25,7 @@ class FileScanner extends Component
     public function scan()
     {
         $this->validate([
-            'file_to_scan' => 'required|max:4096|mimes:png,jpg,docx,doc,zip,exe,msi,ppt,xlxs,pdf', // 2MB Max
+            'file_to_scan' => 'max:4096|mimes:png,jpg,docx,doc,zip,exe,msi,ppt,xlxs,pdf', // 2MB Max
         ]);
 
         if ($this->file_to_scan) {
@@ -68,6 +69,7 @@ class FileScanner extends Component
                         $this->scanned = true;
                         $this->scan_date = $report['scan_date'];
                         $this->reset(['file_to_scan']);
+                        $this->fail_message = '';
                     } else {
                         $this->fail_message = 'No scan results available.';
                     }
